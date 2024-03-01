@@ -30,7 +30,7 @@ Change into the project directory:
 
 bash
 Copy code
-cd event-sheduler
+cd event-scheduler
 Install dependencies:
 
 bash
