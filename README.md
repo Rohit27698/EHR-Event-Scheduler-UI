@@ -1,6 +1,6 @@
 # Event App
 
-A simple Event App to help you organize your tasks and stay productive.
+A simple Event App to help you organize your Event and stay productive.
 
 ## Features
 
