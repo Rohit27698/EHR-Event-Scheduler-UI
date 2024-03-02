@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Calender from './Calender';
+import DateTimeDisplay from './DateAndTImeDisplay';
 
 export default function Dashboard() {
   const [events, setEvents] = useState([]);
@@ -26,7 +27,7 @@ export default function Dashboard() {
       </div>
 
       {/* Event list */}
-      <div className="md:w-1/2 p-2 overflow-auto min h-screen" style={{ maxHeight: 'calc(100vh - 80px)' }}>
+      <div className="md:w-1/2  p-2 overflow-auto min h-screen" style={{ maxHeight: 'calc(100vh - 80px)' }}>
         <ul className="divide-y divide-gray-200" style={{ height: '100%' }}>
           {sortedEvents.map((event) => (
             <li key={event._id} className="py-2">
@@ -39,14 +40,10 @@ export default function Dashboard() {
                   <p className="mt-1 max-w-xs text-xs text-gray-500">{event.description}</p>
                 </div>
                 <div className="border-t border-gray-200 px-2 py-2 sm:px-4">
-                  <dl className="grid grid-cols-2 gap-x-2 gap-y-4 sm:grid-cols-3">
+                  <dl className="grid grid-cols-2 gap-x-2 gap-y-4 sm:grid-cols-2">
                     <div className="sm:col-span-1">
                       <dt className="text-xs font-medium text-gray-500">Start Time</dt>
-                      <dd className="mt-1 text-xs text-gray-900">{event.startTime}</dd>
-                    </div>
-                    <div className="sm:col-span-1">
-                      <dt className="text-xs font-medium text-gray-500">End Time</dt>
-                      <dd className="mt-1 text-xs text-gray-900">{event.endTime}</dd>
+                      <dd className="mt-1 text-xs text-gray-900"><DateTimeDisplay dateTime={event.startTime} /></dd>
                     </div>
                     <div className="sm:col-span-1">
                       <dt className="text-xs font-medium text-gray-500">Status</dt>
